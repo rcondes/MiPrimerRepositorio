@@ -1,8 +1,9 @@
 import streamlit
 
-streamlit.header('Haciendo cositas')
+streamlit.title('Haciendo cositas')
 
-streamlit.title('My new code has no sense')
+streamlit.header('My new code has no sense')
+
 streamlit.text('----------------')
 streamlit.text('--Example code--')
 streamlit.text('----------------')
