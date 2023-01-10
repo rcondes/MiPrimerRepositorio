@@ -1,4 +1,5 @@
 import streamlit
+import pandas
 
 streamlit.title('Título: Haciendo cositas')
 
@@ -13,3 +14,6 @@ streamlit.header('Header 2')
 
 streamlit.text('Y ahora unas moñerías varias')
 streamlit.text('🥣 🥗 🐔 🥑🍞')
+
+my_fruit_list = pandas.read.csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+streamlit.dataframe(my_fruit_list)
