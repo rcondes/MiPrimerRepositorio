@@ -24,6 +24,6 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 #con esto ponemos listas de selección al dataframe
 #primero sin 
 #streamlit.multiselect ("Seleccione sus frutas:", list(my_fruit_list.index))
-streamlit.multiselect ("Seleccione sus frutas:", list(my_fruit_list.index))
+streamlit.multiselect ("Seleccione sus frutas:", list(my_fruit_list.index),['Avocado','Strawberries'])
 
 streamlit.dataframe(my_fruit_list)
