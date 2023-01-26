@@ -34,7 +34,10 @@ streamlit.header("Fruityvice Fruit Advice!")
 
 import requests
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "Kiwi")
+fruit_choice = streamlit.text_input ('Sobre que fruta quieres info?', 'kiwi')
+stream.write('El usuario eligió', fruit_choice)
+
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 #streamlit.text(fruityvice_response.json()) # Tan solo manda los datos en crudo a la pantalla
 
 # Descargamos el contenido normalizado del JSON con Panda
