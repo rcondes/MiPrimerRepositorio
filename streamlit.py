@@ -59,7 +59,16 @@ my_cur.execute("SELECT * from fruit_load_list")
 my_data_row = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 
-add_my_fruit = streamlit.text_input('what fruit would you like to add?','Calamar')
-streamlit.write('Thanks for adding --> ', add_my_fruit)
-my_cur.execute("Insert into fruit_load_list (fruit_name) values ('" + add_my_fruit + "')")
-streamlit.dataframe(my_data_row)
+try:
+  add_my_fruit = streamlit.text_input('what fruit would you like to add to the list?','Calamar')
+  if not add_my_fruit:
+      streamlit.error ("A ver, mete una fruta...")
+  else:
+    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + add_my_fruit)
+    fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    streamlit.dataframe(fruityvice_normalized
+    streamlit.write('Thanks for adding --> ', add_my_fruit)
+    my_cur.execute("Insert into fruit_load_list (fruit_name) values ('" + add_my_fruit + "')")
+    streamlit.dataframe(my_data_row)
+except URLError as e:
+  streamlite.error()
