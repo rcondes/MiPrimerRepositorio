@@ -6,7 +6,7 @@ streamlit.title('Título: Haciendo cositas')
 
 streamlit.header('Header 1')
 
-streamlit.text('My new code has no sense')
+streamlit.text('My new code does not make sense')
 streamlit.text('----------------')
 streamlit.text('--Example code--')
 streamlit.text('----------------')
